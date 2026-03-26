@@ -1,0 +1,87 @@
+﻿<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GF Shop | Checkout</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="bg-noise"></div>
+  <div class="bg-shape bg-shape-one"></div>
+  <div class="bg-shape bg-shape-two"></div>
+  <div class="bg-shape bg-shape-three"></div>
+
+  <header class="site-header">
+    <div class="brand-wrap">
+      <a href="index.html" class="brand-link">
+        <img src="assets/logo-gfshop.png" alt="GF Shop" class="brand-logo brand-logo-animated" />
+      </a>
+    </div>
+    <div class="top-search-wrap"><a class="btn btn-soft" href="index.html">Volver a tienda</a></div>
+    <nav class="site-nav"><a href="index.html#catalogo">Seguir comprando</a></nav>
+  </header>
+
+  <main>
+    <section class="checkout-page">
+      <article class="checkout-form-card">
+        <h2>Informacion de entrega</h2>
+        <form id="checkoutPageForm" class="checkout-form">
+          <label>Nombre completo
+            <input name="fullName" type="text" required />
+          </label>
+          <label>Correo electrónico
+            <input name="email" type="email" required />
+          </label>
+          <label>Teléfono
+            <input name="phone" type="tel" required />
+          </label>
+          <label>Dirección de entrega
+            <input name="addressLine1" type="text" required />
+          </label>
+          <div class="checkout-grid">
+            <label>Ciudad
+              <input name="city" type="text" value="Bogota" required />
+            </label>
+            <label>Código postal
+              <input name="postalCode" type="text" />
+            </label>
+          </div>
+
+          <h3 class="checkout-subtitle">Metodo de pago</h3>
+          <div class="payment-methods">
+            <label class="pay-option"><input type="radio" name="paymentMethod" value="Contraentrega" checked />Contraentrega</label>
+            <label class="pay-option"><input type="radio" name="paymentMethod" value="Transferencia bancaria" />Transferencia bancaria</label>
+            <label class="pay-option"><input type="radio" name="paymentMethod" value="Nequi" />Nequi</label>
+            <label class="pay-option"><input type="radio" name="paymentMethod" value="Daviplata" />Daviplata</label>
+            <label class="pay-option"><input type="radio" name="paymentMethod" value="Tarjeta (enlace de pago)" />Tarjeta (enlace de pago)</label>
+          </div>
+
+          <label>Nota de pago / referencia (opcional)
+            <input name="paymentDetail" type="text" placeholder="Ej: Nequi terminado en 8899" />
+          </label>
+
+          <button id="submitCheckoutPage" class="btn btn-primary full" type="submit">Enviar pedido por WhatsApp</button>
+        </form>
+      </article>
+
+      <aside class="checkout-summary-card">
+        <h3>Resumen del pedido</h3>
+        <div id="checkoutItems" class="checkout-items"></div>
+        <div class="cart-summary">
+          <div><span>Subtotal</span><strong id="checkoutSubtotal">$0</strong></div>
+          <div><span>Envio</span><strong id="checkoutShipping">$0</strong></div>
+          <div class="cart-summary-total"><span>Total</span><strong id="checkoutTotal">$0</strong></div>
+        </div>
+        <small id="checkoutHint">El pedido se enviara directamente al WhatsApp del vendedor.</small>
+      </aside>
+    </section>
+  </main>
+
+  <script src="catalog-data.js"></script>
+  <script src="checkout.js"></script>
+</body>
+</html>

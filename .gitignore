@@ -1,0 +1,4 @@
+﻿node_modules/
+.tools/
+.env
+backend/local-orders.json

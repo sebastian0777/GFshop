@@ -1,0 +1,21 @@
+﻿{
+  "name": "gf-shop",
+  "version": "1.0.0",
+  "description": "GF Shop dropshipping storefront + backend API",
+  "main": "server.js",
+  "scripts": {
+    "dev": "node server.js",
+    "dev:portable": ".\\.tools\\node-v22.15.0-win-x64\\node.exe server.js",
+    "start": "node server.js",
+    "start:portable": ".\\.tools\\node-v22.15.0-win-x64\\node.exe server.js",
+    "db:init": "node backend/scripts/initDb.js",
+    "db:init:portable": ".\\.tools\\node-v22.15.0-win-x64\\node.exe backend/scripts/initDb.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
+    "express": "^4.19.2",
+    "pg": "^8.13.1",
+    "stripe": "^18.3.0"
+  }
+}

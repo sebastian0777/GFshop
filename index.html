@@ -1,0 +1,150 @@
+﻿<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GF Shop | Compra Online</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="bg-noise"></div>
+  <div class="bg-shape bg-shape-one"></div>
+  <div class="bg-shape bg-shape-two"></div>
+  <div class="bg-shape bg-shape-three"></div>
+
+  <header class="site-header">
+    <div class="brand-wrap">
+      <a href="index.html" class="brand-link">
+        <img src="assets/logo-gfshop.png" alt="GF Shop" class="brand-logo brand-logo-animated" />
+      </a>
+    </div>
+
+    <div class="top-search-wrap">
+      <span class="search-icon" aria-hidden="true">⌕</span>
+      <input id="searchInput" type="text" placeholder="Buscar productos, categorias..." />
+      <button id="clearSearch" class="search-clear" type="button" aria-label="Limpiar busqueda">×</button>
+    </div>
+
+    <nav class="site-nav">
+      <div class="nav-categories">
+        <a href="#catalogo">Productos</a>
+        <div class="nav-categories-menu">
+          <a href="index.html?cat=all#catalogo">Todo</a>
+          <a href="index.html?cat=Hogar#catalogo">Hogar</a>
+          <a href="index.html?cat=Tecnología#catalogo">Tecnología</a>
+          <a href="index.html?cat=Bienestar#catalogo">Bienestar</a>
+          <a href="index.html?cat=Cocina#catalogo">Cocina</a>
+          <a href="index.html?cat=Moda#catalogo">Moda</a>
+          <a href="index.html?cat=Aseo#catalogo">Aseo</a>
+          <a href="index.html?cat=Deporte#catalogo">Deporte</a>
+          <a href="index.html?cat=Oficina#catalogo">Oficina</a>
+          <a href="index.html?cat=Mascotas#catalogo">Mascotas</a>
+        </div>
+      </div>
+      <button id="openCart" class="cart-btn">Carrito (<span id="cartCount">0</span>)</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero-market">
+      <div>
+        <p class="kicker">Market de productos virales</p>
+        <h1>Compra rápido, compra bien.</h1>
+        <p class="hero-copy">Miles de productos ganadores con envíos confiables y precios competitivos.</p>
+        <div class="hero-metrics">
+          <article>
+            <strong>+2.500</strong>
+            <span>Pedidos mensuales</span>
+          </article>
+          <article>
+            <strong>24h</strong>
+            <span>Despacho promedio</span>
+          </article>
+          <article>
+            <strong>4.8/5</strong>
+            <span>Clientes felices</span>
+          </article>
+        </div>
+      </div>
+      <div class="hero-badges">
+        <span>Envios a toda Colombia</span>
+        <span>Pago seguro</span>
+        <span>Nuevos productos cada semana</span>
+      </div>
+    </section>
+
+    <section id="catalogo" class="catalog-section">
+      <div class="catalog-head">
+        <h2>Todos los productos</h2>
+        <div class="controls">
+          <label class="promo-filter">
+            <input type="checkbox" id="promoOnly" />
+            Solo promociones
+          </label>
+          <select id="categoryFilter">
+            <option value="all">Todas las categorias</option>
+          </select>
+        </div>
+      </div>
+      <div id="productsGrid" class="products-grid"></div>
+    </section>
+  </main>
+
+  <aside id="cartDrawer" class="cart-drawer" aria-hidden="true">
+    <div class="cart-header">
+      <h3>Tu carrito</h3>
+      <button id="closeCart" class="icon-btn" aria-label="Cerrar">x</button>
+    </div>
+    <div id="cartItems" class="cart-items"></div>
+    <div class="cart-footer cart-footer-col">
+      <div class="cart-summary">
+        <div><span>Subtotal</span><strong id="cartSubtotal">$0</strong></div>
+        <div><span>Envio</span><strong id="cartShipping">$0</strong></div>
+        <div class="cart-summary-total"><span>Total</span><strong id="cartTotal">$0</strong></div>
+      </div>
+      <small id="cartInfo">Tu carrito se guarda automaticamente.</small>
+      <button id="checkoutBtn" class="btn btn-primary full">Pagar ahora</button>
+    </div>
+  </aside>
+  <div id="cartOverlay" class="cart-overlay"></div>
+
+  <div id="checkoutModal" class="checkout-modal" aria-hidden="true">
+    <div class="checkout-backdrop" data-close-checkout="true"></div>
+    <section class="checkout-panel" role="dialog" aria-modal="true" aria-labelledby="checkoutTitle">
+      <div class="checkout-head">
+        <h3 id="checkoutTitle">Finalizar compra</h3>
+        <button id="closeCheckout" class="icon-btn" type="button" aria-label="Cerrar checkout">x</button>
+      </div>
+      <form id="checkoutForm" class="checkout-form">
+        <label>Nombre completo
+          <input name="fullName" type="text" required />
+        </label>
+        <label>Correo electrónico
+          <input name="email" type="email" required />
+        </label>
+        <label>Teléfono (opcional)
+          <input name="phone" type="tel" />
+        </label>
+        <label>Dirección de entrega
+          <input name="addressLine1" type="text" required />
+        </label>
+        <div class="checkout-grid">
+          <label>Ciudad
+            <input name="city" type="text" value="Bogota" required />
+          </label>
+          <label>Código postal (opcional)
+            <input name="postalCode" type="text" />
+          </label>
+        </div>
+        <button id="confirmCheckout" class="btn btn-primary full" type="submit">Ir a pagar</button>
+      </form>
+    </section>
+  </div>
+
+  <script src="catalog-data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
