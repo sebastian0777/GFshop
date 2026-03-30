@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="72" viewBox="0 0 120 72" role="img" aria-label="Contraentrega">
+  <rect x="2" y="2" width="116" height="68" rx="14" fill="#f3f8f4" stroke="#184c32" stroke-width="2"/>
+  <rect x="16" y="18" width="36" height="24" rx="6" fill="#184c32" opacity="0.12"/>
+  <path d="M20 30h28" stroke="#184c32" stroke-width="2"/>
+  <circle cx="80" cy="36" r="14" fill="#184c32"/>
+  <text x="80" y="40" text-anchor="middle" font-family="Manrope, sans-serif" font-size="10" fill="#fff">COD</text>
+</svg>

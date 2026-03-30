@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="72" viewBox="0 0 120 72" role="img" aria-label="Nequi">
+  <rect x="2" y="2" width="116" height="68" rx="14" fill="#f6eef8" stroke="#69307e" stroke-width="2"/>
+  <circle cx="28" cy="36" r="16" fill="#69307e"/>
+  <path d="M20 38c4-6 12-6 16 0" stroke="#fff" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <text x="58" y="41" font-family="Manrope, sans-serif" font-size="18" font-weight="700" fill="#69307e">Nequi</text>
+</svg>

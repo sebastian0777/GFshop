@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="72" viewBox="0 0 120 72" role="img" aria-label="Tarjeta">
+  <rect x="2" y="2" width="116" height="68" rx="14" fill="#edf4f0" stroke="#184c32" stroke-width="2"/>
+  <rect x="16" y="16" width="88" height="40" rx="8" fill="#184c32"/>
+  <rect x="16" y="24" width="88" height="8" fill="#0f2f21"/>
+  <rect x="24" y="40" width="20" height="8" rx="3" fill="#b99a43"/>
+  <circle cx="84" cy="44" r="7" fill="#fff" opacity="0.82"/>
+  <circle cx="92" cy="44" r="7" fill="#fff" opacity="0.6"/>
+</svg>

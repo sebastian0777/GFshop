@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <div class="bg-monogram"></div>
   <div class="bg-noise"></div>
   <div class="bg-shape bg-shape-one"></div>
   <div class="bg-shape bg-shape-two"></div>
@@ -139,7 +140,42 @@
             <input name="postalCode" type="text" />
           </label>
         </div>
-        <button id="confirmCheckout" class="btn btn-primary full" type="submit">Ir a pagar</button>
+
+        <h3 class="checkout-subtitle">Metodo de pago</h3>
+        <div class="payment-methods">
+          <label class="pay-option">
+            <input type="radio" name="paymentMethod" value="Contraentrega" checked />
+            <img src="assets/payments/contraentrega-official.png" alt="Contraentrega" onerror="this.onerror=null;this.src='assets/payments/contraentrega.svg';" />
+            <span>Contraentrega</span>
+          </label>
+          <label class="pay-option">
+            <input type="radio" name="paymentMethod" value="Transferencia bancaria" />
+            <img src="assets/payments/transferencia-official.png" alt="Transferencia bancaria" onerror="this.onerror=null;this.src='assets/payments/transferencia.svg';" />
+            <span>Transferencia bancaria</span>
+          </label>
+          <label class="pay-option">
+            <input type="radio" name="paymentMethod" value="Nequi" />
+            <img src="assets/payments/nequi-official.png" alt="Nequi" onerror="this.onerror=null;this.src='assets/payments/nequi.svg';" />
+            <span>Nequi</span>
+          </label>
+          <label class="pay-option">
+            <input type="radio" name="paymentMethod" value="Daviplata" />
+            <img src="assets/payments/daviplata-official.png" alt="Daviplata" onerror="this.onerror=null;this.src='assets/payments/daviplata.svg';" />
+            <span>Daviplata</span>
+          </label>
+          <label class="pay-option">
+            <input type="radio" name="paymentMethod" value="Tarjeta (enlace de pago)" />
+            <img src="assets/payments/tarjeta-official.png" alt="Tarjeta" onerror="this.onerror=null;this.src='assets/payments/tarjeta.svg';" />
+            <span>Tarjeta (enlace de pago)</span>
+          </label>
+        </div>
+
+        <label>Nota de pago / referencia (opcional)
+          <input name="paymentDetail" type="text" placeholder="Ej: Nequi terminado en 8899" />
+        </label>
+
+        <small id="checkoutStatusHint">El pedido se enviara al WhatsApp del vendedor.</small>
+        <button id="confirmCheckout" class="btn btn-primary full" type="submit">Enviar pedido por WhatsApp</button>
       </form>
     </section>
   </div>

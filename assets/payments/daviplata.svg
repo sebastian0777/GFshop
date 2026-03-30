@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="72" viewBox="0 0 120 72" role="img" aria-label="Daviplata">
+  <rect x="2" y="2" width="116" height="68" rx="14" fill="#fff1f0" stroke="#d23f34" stroke-width="2"/>
+  <path d="M16 50L40 20h22L38 50z" fill="#d23f34" opacity="0.9"/>
+  <text x="62" y="34" font-family="Manrope, sans-serif" font-size="10" fill="#8f2a24">DAVI</text>
+  <text x="62" y="48" font-family="Manrope, sans-serif" font-size="15" font-weight="700" fill="#d23f34">PLATA</text>
+</svg>

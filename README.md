@@ -24,20 +24,24 @@ GF Shop ahora funciona como tienda orientada a productos (estilo marketplace) y 
 3. Agrega llaves Stripe:
    - `STRIPE_SECRET_KEY`
    - `STRIPE_WEBHOOK_SECRET`
-4. Instala dependencias:
+4. Configura WhatsApp:
+   - `WHATSAPP_ORDER_PHONE` (numero destino en formato internacional, solo digitos)
+   - `WHATSAPP_CLOUD_PHONE_NUMBER_ID` (opcional, para envio directo oficial con Cloud API)
+   - `WHATSAPP_CLOUD_TOKEN` (opcional, para envio directo oficial con Cloud API)
+5. Instala dependencias:
 
 ```bash
 npm install
 ```
 
-5. Crea la base de datos `gf_shop` en PostgreSQL.
-6. Inicializa esquema y datos:
+6. Crea la base de datos `gf_shop` en PostgreSQL.
+7. Inicializa esquema y datos:
 
 ```bash
 npm run db:init
 ```
 
-7. Inicia la app:
+8. Inicia la app:
 
 ```bash
 npm run dev
@@ -71,8 +75,25 @@ Copia el `whsec_...` generado y pegalo en `STRIPE_WEBHOOK_SECRET`.
 - Si Stripe esta configurado, al crear orden retorna `paymentUrl` y redirige al checkout.
 - Si Stripe no esta configurado, la orden queda en `pending_payment`.
 
+## WhatsApp de pedidos
+
+- Con `WHATSAPP_CLOUD_PHONE_NUMBER_ID` + `WHATSAPP_CLOUD_TOKEN`, el pedido se envia directamente al WhatsApp del vendedor desde el servidor.
+- Si Cloud API no esta configurada, se usa fallback `wa.me` con el mensaje completo precargado.
+
 ## Logo
 
 Guarda el logo en:
 
 `assets/logo-gfshop.png`
+
+## Logos oficiales de pago
+
+Para usar logos oficiales, coloca estos archivos:
+
+- `assets/payments/contraentrega-official.png`
+- `assets/payments/transferencia-official.png`
+- `assets/payments/nequi-official.png`
+- `assets/payments/daviplata-official.png`
+- `assets/payments/tarjeta-official.png`
+
+Si no existen, la tienda usa iconos locales de respaldo.

@@ -22,6 +22,92 @@ const localOrdersFile = path.join(__dirname, "backend", "local-orders.json");
 const providerCache = { updatedAt: 0, items: [] };
 const PROVIDER_CACHE_TTL_MS = 5 * 60 * 1000;
 
+function normalizePhone(value) {
+  return String(value || "").replace(/\D/g, "");
+}
+
+function getWhatsAppConfigStatus() {
+  const orderPhone = normalizePhone(process.env.WHATSAPP_ORDER_PHONE);
+  const cloudPhoneNumberId = String(process.env.WHATSAPP_CLOUD_PHONE_NUMBER_ID || "").trim();
+  const cloudToken = String(process.env.WHATSAPP_CLOUD_TOKEN || "").trim();
+  const missing = [];
+  if (!orderPhone) missing.push("WHATSAPP_ORDER_PHONE");
+  if (!cloudPhoneNumberId) missing.push("WHATSAPP_CLOUD_PHONE_NUMBER_ID");
+  if (!cloudToken) missing.push("WHATSAPP_CLOUD_TOKEN");
+
+  return {
+    orderPhoneConfigured: Boolean(orderPhone),
+    cloudConfigured: Boolean(cloudPhoneNumberId && cloudToken),
+    missing,
+    orderPhone,
+  };
+}
+
+function buildOrderWhatsappMessage({
+  orderId,
+  customer,
+  payment,
+  lines,
+  subtotal,
+  shippingCost,
+  total,
+}) {
+  const linesText = lines
+    .map((line, idx) => `${idx + 1}. ${line.name} x${line.qty} - ${line.totalPrice.toLocaleString("es-CO")} COP`)
+    .join("\n");
+  const paymentMethod = String(payment.method || "No especificado");
+  const paymentDetail = String(payment.detail || "");
+
+  return (
+    `Hola, nuevo pedido GF Shop #${orderId}\n\n` +
+    `Cliente: ${customer.fullName}\n` +
+    `Correo: ${customer.email}\n` +
+    `Telefono: ${customer.phone || "N/A"}\n` +
+    `Direccion: ${customer.addressLine1}, ${customer.city}\n` +
+    `Pais: ${customer.country}\n` +
+    `Codigo postal: ${customer.postalCode || "N/A"}\n\n` +
+    `Metodo de pago: ${paymentMethod}${paymentDetail ? ` (${paymentDetail})` : ""}\n\n` +
+    `Productos:\n${linesText}\n\n` +
+    `Subtotal: ${subtotal.toLocaleString("es-CO")} COP\n` +
+    `Envio: ${shippingCost.toLocaleString("es-CO")} COP\n` +
+    `Total: ${total.toLocaleString("es-CO")} COP`
+  );
+}
+
+async function sendWhatsAppCloudMessage({ to, body }) {
+  const token = process.env.WHATSAPP_CLOUD_TOKEN;
+  const phoneNumberId = process.env.WHATSAPP_CLOUD_PHONE_NUMBER_ID;
+  if (!token || !phoneNumberId || !to || !body) {
+    return { ok: false, reason: "not_configured" };
+  }
+
+  try {
+    const response = await fetch(`https://graph.facebook.com/v21.0/${phoneNumberId}/messages`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify({
+        messaging_product: "whatsapp",
+        recipient_type: "individual",
+        to,
+        type: "text",
+        text: { preview_url: false, body },
+      }),
+    });
+
+    const data = await response.json().catch(() => ({}));
+    if (!response.ok) {
+      return { ok: false, reason: data?.error?.message || "cloud_api_error" };
+    }
+
+    return { ok: true, id: data?.messages?.[0]?.id || null };
+  } catch (error) {
+    return { ok: false, reason: error.message || "cloud_api_exception" };
+  }
+}
+
 function withPromotion(product) {
   const salePrice = Number(product.salePrice || 0);
   const originalPrice = Math.round(salePrice * 1.25 / 1000) * 1000;
@@ -161,6 +247,7 @@ function normalizeProviderProduct(input, provider) {
     category,
     description: input.description || "",
     imageUrl,
+    images,
     salePrice,
     stock,
     videos,
@@ -475,6 +562,11 @@ app.get("/api/v1/providers/status", async (_req, res) => {
   } catch (error) {
     return res.status(500).json({ message: "providers status failed", detail: error.message, ...status });
   }
+});
+
+app.get("/api/v1/whatsapp/status", (_req, res) => {
+  const status = getWhatsAppConfigStatus();
+  return res.json(status);
 });
 
 app.get("/api/v1/products", async (req, res) => {
@@ -893,6 +985,10 @@ app.post("/api/v1/orders/local", async (req, res) => {
       status: "pending",
       paymentStatus: "pending_payment",
       customer,
+      payment: {
+        method: String(payment.method || "No especificado"),
+        detail: String(payment.detail || ""),
+      },
       lines: normalizedLines,
       subtotal,
       shippingCost,
@@ -904,32 +1000,23 @@ app.post("/api/v1/orders/local", async (req, res) => {
     current.push(record);
     fs.writeFileSync(localOrdersFile, JSON.stringify(current, null, 2), "utf8");
 
-    let whatsappUrl = null;
-    if (process.env.WHATSAPP_ORDER_PHONE) {
-      const linesText = normalizedLines
-        .map(
-          (line, idx) =>
-            `${idx + 1}. ${line.name} x${line.qty} - ${line.totalPrice.toLocaleString("es-CO")} COP`
-        )
-        .join("\n");
-      const paymentMethod = String(payment.method || "No especificado");
-      const paymentDetail = String(payment.detail || "");
-      const msgRaw =
-        `Hola, nuevo pedido GF Shop #${orderId}\n\n` +
-        `Cliente: ${customer.fullName}\n` +
-        `Correo: ${customer.email}\n` +
-        `Telefono: ${customer.phone || "N/A"}\n` +
-        `Direccion: ${customer.addressLine1}, ${customer.city}\n` +
-        `Pais: ${customer.country}\n` +
-        `Codigo postal: ${customer.postalCode || "N/A"}\n\n` +
-        `Metodo de pago: ${paymentMethod}${paymentDetail ? ` (${paymentDetail})` : ""}\n\n` +
-        `Productos:\n${linesText}\n\n` +
-        `Subtotal: ${subtotal.toLocaleString("es-CO")} COP\n` +
-        `Envio: ${shippingCost.toLocaleString("es-CO")} COP\n` +
-        `Total: ${total.toLocaleString("es-CO")} COP`;
-      const msg = encodeURIComponent(msgRaw);
-      whatsappUrl = `https://wa.me/${process.env.WHATSAPP_ORDER_PHONE}?text=${msg}`;
-    }
+    const waStatus = getWhatsAppConfigStatus();
+    const destinationPhone = waStatus.orderPhone;
+    const msgRaw = buildOrderWhatsappMessage({
+      orderId,
+      customer,
+      payment,
+      lines: normalizedLines,
+      subtotal,
+      shippingCost,
+      total,
+    });
+    const cloudResult = await sendWhatsAppCloudMessage({ to: destinationPhone, body: msgRaw });
+
+    const msg = encodeURIComponent(msgRaw);
+    const whatsappUrl = destinationPhone ? `https://wa.me/${destinationPhone}?text=${msg}` : null;
+    const whatsappSent = Boolean(cloudResult.ok);
+    const whatsappDelivery = whatsappSent ? "cloud_api" : whatsappUrl ? "wa_me" : "none";
 
     res.status(201).json({
       orderId,
@@ -938,7 +1025,16 @@ app.post("/api/v1/orders/local", async (req, res) => {
       paymentMode: "manual_local",
       total,
       whatsappUrl,
-      message: "Orden creada en modo local. Se registro correctamente.",
+      whatsappSent,
+      whatsappDelivery,
+      whatsappConfigured: Boolean(destinationPhone),
+      whatsappConfig: waStatus,
+      message: whatsappSent
+        ? "Pedido enviado directamente al WhatsApp del vendedor."
+        : whatsappUrl
+          ? "Pedido creado. Abriendo WhatsApp para confirmar el envio."
+          : "Orden creada en modo local. Configura WHATSAPP_ORDER_PHONE para activar WhatsApp.",
+      whatsappError: cloudResult.ok ? null : cloudResult.reason,
     });
   } catch (error) {
     res.status(500).json({ message: "Error creating local order", detail: error.message });

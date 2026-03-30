@@ -394,5 +394,293 @@
     colors: ["Negro", "Gris"],
     features: ["Reduce tension de muñeca", "Conexión inalambrica", "Botones silenciosos"],
     specs: ["DPI: 800-2400", "Bateria recargable", "USB receptor incluido"]
+  },
+  {
+    id: 1023,
+    sku: "GF-HOG-041",
+    name: "Lampara recargable sensor de movimiento",
+    category: "Hogar",
+    imageUrl: "https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=900&q=80",
+    gallery: [
+      "https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1549187774-b4e9b0445b41?auto=format&fit=crop&w=1200&q=80"
+    ],
+    salePrice: 67900,
+    originalPrice: 94900,
+    stock: 54,
+    colors: ["Blanco calido", "Blanco frio"],
+    features: ["Encendido automatico", "Montaje sin taladro", "Carga USB-C"],
+    specs: ["Autonomia: 8 horas", "Sensor: 120 grados", "Longitud: 30 cm"]
+  },
+  {
+    id: 1024,
+    sku: "GF-TEC-042",
+    name: "Mini impresora termica portatil",
+    category: "Tecnología",
+    imageUrl: "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=900&q=80",
+    gallery: [
+      "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1517148815978-75f6acaaf32c?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=1200&q=80"
+    ],
+    salePrice: 119900,
+    originalPrice: 159900,
+    stock: 33,
+    colors: ["Rosa", "Azul", "Blanco"],
+    features: ["Imprime desde app", "Sin tinta", "Ideal para etiquetas y notas"],
+    specs: ["Conectividad: Bluetooth", "Papel: 57 mm", "Bateria: 1000mAh"]
+  },
+  {
+    id: 1025,
+    sku: "GF-COC-043",
+    name: "Picatodo electrico 3 en 1",
+    category: "Cocina",
+    imageUrl: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=900&q=80",
+    gallery: [
+      "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1516483638261-f4dbaf036963?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80"
+    ],
+    salePrice: 95900,
+    originalPrice: 129900,
+    stock: 27,
+    colors: ["Gris", "Negro"],
+    features: ["Pica, mezcla y tritura", "Cuchillas inox", "Recipiente lavable"],
+    specs: ["Capacidad: 1.5 L", "Potencia: 300W", "Voltaje: 110V"]
+  },
+  {
+    id: 1026,
+    sku: "GF-ASE-044",
+    name: "Cepillo electrico de limpieza facial",
+    category: "Aseo",
+    imageUrl: "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=900&q=80",
+    gallery: [
+      "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1516979187457-637abb4f9353?auto=format&fit=crop&w=1200&q=80"
+    ],
+    salePrice: 73900,
+    originalPrice: 99900,
+    stock: 62,
+    colors: ["Rosa", "Lila", "Verde menta"],
+    features: ["Limpieza profunda", "Silicona suave", "Resistente al agua"],
+    specs: ["Modos: 5", "Carga: USB", "Autonomia: 20 dias"]
+  },
+  {
+    id: 1027,
+    sku: "GF-MOD-045",
+    name: "Gafas de sol polarizadas UV400",
+    category: "Moda",
+    imageUrl: "https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=900&q=80",
+    gallery: [
+      "https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1473496169904-658ba7c44d8a?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=1200&q=80"
+    ],
+    salePrice: 58900,
+    originalPrice: 89900,
+    stock: 70,
+    colors: ["Negro", "Cafe", "Transparente"],
+    features: ["Filtro polarizado", "Proteccion UV400", "Marco liviano"],
+    specs: ["Material: TR90", "Peso: 24 g", "Incluye estuche"]
+  },
+  {
+    id: 1028,
+    sku: "GF-DEP-046",
+    name: "Rodillo abdominal automatico con rebote",
+    category: "Deporte",
+    imageUrl: "https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=900&q=80",
+    gallery: [
+      "https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1574680096145-d05b474e2155?auto=format&fit=crop&w=1200&q=80"
+    ],
+    salePrice: 88900,
+    originalPrice: 124900,
+    stock: 38,
+    colors: ["Negro", "Azul"],
+    features: ["Sistema auto-rebote", "Agarre ergonomico", "Incluye tapete"],
+    specs: ["Carga max: 120 kg", "Material: ABS + acero", "Peso: 1.1 kg"]
+  },
+  {
+    id: 1029,
+    sku: "GF-HOG-047",
+    name: "Sellador al vacio para alimentos",
+    category: "Hogar",
+    imageUrl: "https://images.unsplash.com/photo-1585238342024-78d387f4a707?auto=format&fit=crop&w=900&q=80",
+    gallery: [
+      "https://images.unsplash.com/photo-1585238342024-78d387f4a707?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1506617420156-8e4536971650?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1514996937319-344454492b37?auto=format&fit=crop&w=1200&q=80"
+    ],
+    salePrice: 109900,
+    originalPrice: 149900,
+    stock: 29,
+    colors: ["Negro", "Plata"],
+    features: ["Conserva frescura", "Funcion seco/humedo", "Incluye bolsas iniciales"],
+    specs: ["Potencia: 90W", "Ancho de sellado: 30 cm", "Voltaje: 110V"]
+  },
+  {
+    id: 1030,
+    sku: "GF-TEC-048",
+    name: "Camara mini magnetica WiFi",
+    category: "Tecnología",
+    imageUrl: "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=900&q=80",
+    gallery: [
+      "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1516724562728-afc824a36e84?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1521146764736-56c929d59c83?auto=format&fit=crop&w=1200&q=80"
+    ],
+    salePrice: 149900,
+    originalPrice: 199900,
+    stock: 18,
+    colors: ["Negro"],
+    features: ["Grabacion HD", "Vision nocturna", "Deteccion de movimiento"],
+    specs: ["Resolucion: 1080p", "Bateria: 800mAh", "Almacenamiento: microSD"]
+  },
+  {
+    id: 1031,
+    sku: "GF-OFI-049",
+    name: "Teclado inalambrico compacto retroiluminado",
+    category: "Oficina",
+    imageUrl: "https://images.unsplash.com/photo-1517336714739-489689fd1ca8?auto=format&fit=crop&w=900&q=80",
+    gallery: [
+      "https://images.unsplash.com/photo-1517336714739-489689fd1ca8?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=1200&q=80"
+    ],
+    salePrice: 129900,
+    originalPrice: 169900,
+    stock: 25,
+    colors: ["Negro", "Blanco"],
+    features: ["Conexión dual", "Teclas silenciosas", "Luz ajustable"],
+    specs: ["Layout: 78 teclas", "Bateria: 2000mAh", "Conexion: BT + USB receptor"]
+  },
+  {
+    id: 1032,
+    sku: "GF-MAS-050",
+    name: "Cama antiestras para mascotas",
+    category: "Mascotas",
+    imageUrl: "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=900&q=80",
+    gallery: [
+      "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1518717758536-85ae29035b6d?auto=format&fit=crop&w=1200&q=80"
+    ],
+    salePrice: 94900,
+    originalPrice: 129900,
+    stock: 41,
+    colors: ["Gris", "Cafe", "Rosa"],
+    features: ["Efecto calmante", "Base antideslizante", "Funda lavable"],
+    specs: ["Talla: M", "Diametro: 60 cm", "Material: felpa premium"]
+  },
+  {
+    id: 1033,
+    sku: "GF-COC-051",
+    name: "Dispensador de aceite en spray 2 en 1",
+    category: "Cocina",
+    imageUrl: "https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=900&q=80",
+    gallery: [
+      "https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&w=1200&q=80"
+    ],
+    salePrice: 49900,
+    originalPrice: 73900,
+    stock: 88,
+    colors: ["Transparente", "Verde"],
+    features: ["Controla porciones", "Pulveriza y vierte", "Vidrio resistente"],
+    specs: ["Capacidad: 470 ml", "Material: vidrio + PP", "Uso: cocina y bbq"]
+  },
+  {
+    id: 1034,
+    sku: "GF-ACC-052",
+    name: "Set 6 organizadores de cajon",
+    category: "Accesorios",
+    imageUrl: "https://images.unsplash.com/photo-1519710164239-da123dc03ef4?auto=format&fit=crop&w=900&q=80",
+    gallery: [
+      "https://images.unsplash.com/photo-1519710164239-da123dc03ef4?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=80"
+    ],
+    salePrice: 57900,
+    originalPrice: 82900,
+    stock: 72,
+    colors: ["Beige", "Gris"],
+    features: ["Orden instantaneo", "Tela plegable", "Multiples tamaños"],
+    specs: ["Cantidad: 6 piezas", "Material: tela no tejida", "Uso: ropa y accesorios"]
+  },
+  {
+    id: 1035,
+    sku: "GF-BIE-053",
+    name: "Masajeador cervical de calor inteligente",
+    category: "Bienestar",
+    imageUrl: "https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&w=900&q=80",
+    gallery: [
+      "https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=1200&q=80"
+    ],
+    salePrice: 139900,
+    originalPrice: 189900,
+    stock: 20,
+    colors: ["Blanco", "Gris oscuro"],
+    features: ["Pulso EMS", "Compresa caliente", "Control remoto"],
+    specs: ["Modos: 6", "Intensidades: 15", "Bateria: 1500mAh"]
+  },
+  {
+    id: 1036,
+    sku: "GF-AUT-054",
+    name: "Soporte magnetico carro carga inalambrica",
+    category: "Automotriz",
+    imageUrl: "https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=900&q=80",
+    gallery: [
+      "https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=1200&q=80"
+    ],
+    salePrice: 99900,
+    originalPrice: 139900,
+    stock: 36,
+    colors: ["Negro"],
+    features: ["Ajuste 360 grados", "Magnetismo fuerte", "Carga rapida Qi"],
+    specs: ["Potencia: 15W", "Entrada: USB-C", "Incluye cable"]
+  },
+  {
+    id: 1037,
+    sku: "GF-DEP-055",
+    name: "Botella termica inteligente con pantalla",
+    category: "Deporte",
+    imageUrl: "https://images.unsplash.com/photo-1602143407151-7111542de6e8?auto=format&fit=crop&w=900&q=80",
+    gallery: [
+      "https://images.unsplash.com/photo-1602143407151-7111542de6e8?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1523362628745-0c100150b504?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1514996937319-344454492b37?auto=format&fit=crop&w=1200&q=80"
+    ],
+    salePrice: 76900,
+    originalPrice: 109900,
+    stock: 48,
+    colors: ["Negro", "Azul", "Rosa"],
+    features: ["Muestra temperatura", "Conserva frio y calor", "Tapa hermetica"],
+    specs: ["Capacidad: 500 ml", "Material: acero 304", "Duracion termica: 12 h"]
+  },
+  {
+    id: 1038,
+    sku: "GF-BEB-056",
+    name: "Cojin lactancia multifuncional",
+    category: "Bebes",
+    imageUrl: "https://images.unsplash.com/photo-1519689680058-324335c77eba?auto=format&fit=crop&w=900&q=80",
+    gallery: [
+      "https://images.unsplash.com/photo-1519689680058-324335c77eba?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1492724441997-5dc865305da7?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1476703993599-0035a21b17a9?auto=format&fit=crop&w=1200&q=80"
+    ],
+    salePrice: 83900,
+    originalPrice: 119900,
+    stock: 22,
+    colors: ["Gris", "Menta", "Beige"],
+    features: ["Soporte ergonomico", "Funda removible", "Relleno de alta densidad"],
+    specs: ["Material: algodon", "Lavado: maquina", "Uso: lactancia y descanso"]
   }
 ];
