@@ -7,8 +7,6 @@ const orderBtn = document.getElementById("starOrderBtn");
 const hint = document.getElementById("starOrderHint");
 const totalEl = document.getElementById("starTotal");
 const mainImage = document.getElementById("starMainImage");
-const mainVideo = document.getElementById("starMainVideo");
-const mainVideoSource = document.getElementById("starMainVideoSource");
 const thumbs = Array.from(document.querySelectorAll(".star-thumb"));
 const prevMediaBtn = document.getElementById("starMediaPrev");
 const nextMediaBtn = document.getElementById("starMediaNext");
@@ -77,27 +75,7 @@ function showMediaByIndex(index) {
 
   const thumb = thumbs[index];
   const image = thumb.dataset.image;
-  const video = thumb.dataset.video;
-  const poster = thumb.dataset.poster;
-
-  if (video && mainVideo && mainVideoSource) {
-    if (poster && mainVideo.poster !== poster) mainVideo.poster = poster;
-    const currentVideo = mainVideoSource.getAttribute("src");
-    if (currentVideo !== video) {
-      mainVideoSource.setAttribute("src", video);
-      mainVideo.load();
-    }
-    mainImage?.classList.add("is-hidden");
-    mainVideo.classList.remove("is-hidden");
-  } else if (mainImage && image) {
-    mainImage.src = image;
-    mainImage.classList.remove("is-hidden");
-    if (mainVideo) {
-      mainVideo.pause();
-      mainVideo.currentTime = 0;
-      mainVideo.classList.add("is-hidden");
-    }
-  }
+  if (mainImage && image) mainImage.src = image;
 
   thumbs.forEach((btn) => btn.classList.remove("active"));
   thumb.classList.add("active");
