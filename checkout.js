@@ -120,6 +120,7 @@ function ensureSuccessPanel() {
       <p class="success-kicker">Pedido confirmado</p>
       <h2 id="successTitle">Estamos procesando tu compra</h2>
       <p id="successBody">Tu pedido fue registrado correctamente.</p>
+      <p id="successNote" class="success-note"><span aria-hidden="true">⏱</span> Estamos validando tu pago y entrega.</p>
       <div class="success-actions">
         <a id="successWhatsAppLink" class="btn btn-primary" href="#" target="_blank" rel="noopener noreferrer">Abrir WhatsApp</a>
         <a class="btn btn-soft" href="index.html">Volver a la tienda</a>
@@ -134,6 +135,7 @@ function showOrderSuccess({ orderId, sentDirectly, whatsappUrl, total }) {
   const panel = ensureSuccessPanel();
   const title = panel.querySelector("#successTitle");
   const body = panel.querySelector("#successBody");
+  const note = panel.querySelector("#successNote");
   const waLink = panel.querySelector("#successWhatsAppLink");
 
   if (title) {
@@ -145,6 +147,11 @@ function showOrderSuccess({ orderId, sentDirectly, whatsappUrl, total }) {
     body.textContent = sentDirectly
       ? `Total confirmado: ${fmt.format(total)}. En breve te contactaran para confirmar entrega y pago.`
       : `Total confirmado: ${fmt.format(total)}. Si WhatsApp no se abrio, usa el boton de abajo para enviar ahora.`;
+  }
+  if (note) {
+    note.textContent = sentDirectly
+      ? "⏱ Confirmacion enviada. Nuestro equipo te contacta en breve."
+      : "⏱ Pedido generado. Completa el envio por WhatsApp para finalizar.";
   }
   if (waLink) {
     if (whatsappUrl) {
