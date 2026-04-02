@@ -2427,6 +2427,13 @@ select {
     display: none;
   }
 
+  .star-video,
+  .star-benefits,
+  .star-reviews,
+  .star-includes {
+    display: none;
+  }
+
   .star-product-page .site-header {
     margin-top: 8px;
     padding: 6px 8px;
