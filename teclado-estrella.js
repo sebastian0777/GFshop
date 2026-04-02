@@ -1,6 +1,6 @@
 const WA_PHONE = "573107831196";
 const PRODUCT_NAME = "Teclado Portatil Plegable Bluetooth";
-const UNIT_PRICE = 89900;
+const UNIT_PRICE = 79900;
 
 const form = document.getElementById("starOrderForm");
 const orderBtn = document.getElementById("starOrderBtn");
