@@ -1,4 +1,4 @@
-ï»¿<!doctype html>
+<!doctype html>
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
@@ -16,6 +16,7 @@
     'https://connect.facebook.net/en_US/fbevents.js');
     fbq('init', '2478404405953956');
     fbq('track', 'PageView');
+    fbq('trackCustom', 'GFShopHeartbeat', { page: window.location.pathname });
   </script>
   <!-- End Meta Pixel Code -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -41,9 +42,9 @@
     </div>
 
     <div class="top-search-wrap">
-      <span class="search-icon" aria-hidden="true">âŒ•</span>
+      <span class="search-icon" aria-hidden="true">?</span>
       <input id="searchInput" type="text" placeholder="Buscar productos, categorias..." />
-      <button id="clearSearch" class="search-clear" type="button" aria-label="Limpiar busqueda">Ã—</button>
+      <button id="clearSearch" class="search-clear" type="button" aria-label="Limpiar busqueda">×</button>
     </div>
 
     <nav class="site-nav">
@@ -52,7 +53,7 @@
         <div class="nav-categories-menu">
           <a href="index.html?cat=all#catalogo">Todo</a>
           <a href="index.html?cat=Hogar#catalogo">Hogar</a>
-          <a href="index.html?cat=TecnologÃ­a#catalogo">TecnologÃ­a</a>
+          <a href="index.html?cat=Tecnología#catalogo">Tecnología</a>
           <a href="index.html?cat=Bienestar#catalogo">Bienestar</a>
           <a href="index.html?cat=Cocina#catalogo">Cocina</a>
           <a href="index.html?cat=Moda#catalogo">Moda</a>
@@ -71,8 +72,8 @@
     <section class="hero-market">
       <div>
         <p class="kicker">Market de productos virales</p>
-        <h1>Compra rÃ¡pido, compra bien.</h1>
-        <p class="hero-copy">Miles de productos ganadores con envÃ­os confiables y precios competitivos.</p>
+        <h1>Compra rápido, compra bien.</h1>
+        <p class="hero-copy">Miles de productos ganadores con envíos confiables y precios competitivos.</p>
         <div class="hero-metrics">
           <article>
             <strong>+2.500</strong>
@@ -102,7 +103,7 @@
       <article>
         <p class="kicker">Landing conectada</p>
         <h2>Teclado Portatil Plegable Bluetooth</h2>
-        <p>Ya esta conectado con la tienda principal. Entra directo a la landing de venta con galeria, video, reseÃ±as y compra contraentrega.</p>
+        <p>Ya esta conectado con la tienda principal. Entra directo a la landing de venta con galeria, video, reseñas y compra contraentrega.</p>
       </article>
       <a href="teclado-estrella.html" class="btn btn-primary">Ir ahora</a>
     </section>
@@ -153,20 +154,20 @@
         <label>Nombre completo
           <input name="fullName" type="text" required />
         </label>
-        <label>Correo electrÃ³nico
+        <label>Correo electrónico
           <input name="email" type="email" required />
         </label>
-        <label>TelÃ©fono (opcional)
+        <label>Teléfono (opcional)
           <input name="phone" type="tel" />
         </label>
-        <label>DirecciÃ³n de entrega
+        <label>Dirección de entrega
           <input name="addressLine1" type="text" required />
         </label>
         <div class="checkout-grid">
           <label>Ciudad
             <input name="city" type="text" value="Bogota" required />
           </label>
-          <label>CÃ³digo postal (opcional)
+          <label>Código postal (opcional)
             <input name="postalCode" type="text" />
           </label>
         </div>

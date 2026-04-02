@@ -1,4 +1,4 @@
-ï»¿<!doctype html>
+<!doctype html>
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
@@ -16,6 +16,7 @@
     'https://connect.facebook.net/en_US/fbevents.js');
     fbq('init', '2478404405953956');
     fbq('track', 'PageView');
+    fbq('trackCustom', 'GFShopHeartbeat', { page: window.location.pathname });
   </script>
   <!-- End Meta Pixel Code -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -86,20 +87,20 @@
         <label>Nombre completo
           <input name="fullName" type="text" required />
         </label>
-        <label>Correo electrÃ³nico
+        <label>Correo electrónico
           <input name="email" type="email" required />
         </label>
-        <label>TelÃ©fono (opcional)
+        <label>Teléfono (opcional)
           <input name="phone" type="tel" />
         </label>
-        <label>DirecciÃ³n de entrega
+        <label>Dirección de entrega
           <input name="addressLine1" type="text" required />
         </label>
         <div class="checkout-grid">
           <label>Ciudad
             <input name="city" type="text" value="Bogota" required />
           </label>
-          <label>CÃ³digo postal (opcional)
+          <label>Código postal (opcional)
             <input name="postalCode" type="text" />
           </label>
         </div>
