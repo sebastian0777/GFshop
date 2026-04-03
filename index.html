@@ -19,6 +19,19 @@
     fbq('trackCustom', 'GFShopHeartbeat', { page: window.location.pathname });
   </script>
   <!-- End Meta Pixel Code -->
+  <!-- TikTok Pixel Code Start -->
+  <script>
+  !function (w, d, t) {
+    w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(
+  var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script")
+  n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
+
+
+    ttq.load('D77CGBJC77U7F63B8350');
+    ttq.page();
+  }(window, document, 'ttq');
+  </script>
+  <!-- TikTok Pixel Code End -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -44,7 +57,7 @@
     <div class="top-search-wrap">
       <span class="search-icon" aria-hidden="true">?</span>
       <input id="searchInput" type="text" placeholder="Buscar productos, categorias..." />
-      <button id="clearSearch" class="search-clear" type="button" aria-label="Limpiar busqueda">×</button>
+      <button id="clearSearch" class="search-clear" type="button" aria-label="Limpiar busqueda">Ã—</button>
     </div>
 
     <nav class="site-nav">
@@ -53,7 +66,7 @@
         <div class="nav-categories-menu">
           <a href="index.html?cat=all#catalogo">Todo</a>
           <a href="index.html?cat=Hogar#catalogo">Hogar</a>
-          <a href="index.html?cat=Tecnología#catalogo">Tecnología</a>
+          <a href="index.html?cat=TecnologÃ­a#catalogo">TecnologÃ­a</a>
           <a href="index.html?cat=Bienestar#catalogo">Bienestar</a>
           <a href="index.html?cat=Cocina#catalogo">Cocina</a>
           <a href="index.html?cat=Moda#catalogo">Moda</a>
@@ -72,8 +85,8 @@
     <section class="hero-market">
       <div>
         <p class="kicker">Market de productos virales</p>
-        <h1>Compra rápido, compra bien.</h1>
-        <p class="hero-copy">Miles de productos ganadores con envíos confiables y precios competitivos.</p>
+        <h1>Compra rÃ¡pido, compra bien.</h1>
+        <p class="hero-copy">Miles de productos ganadores con envÃ­os confiables y precios competitivos.</p>
         <div class="hero-metrics">
           <article>
             <strong>+2.500</strong>
@@ -103,7 +116,7 @@
       <article>
         <p class="kicker">Landing conectada</p>
         <h2>Teclado Portatil Plegable Bluetooth</h2>
-        <p>Ya esta conectado con la tienda principal. Entra directo a la landing de venta con galeria, video, reseñas y compra contraentrega.</p>
+        <p>Ya esta conectado con la tienda principal. Entra directo a la landing de venta con galeria, video, reseÃ±as y compra contraentrega.</p>
       </article>
       <a href="teclado-estrella.html" class="btn btn-primary">Ir ahora</a>
     </section>
@@ -154,20 +167,20 @@
         <label>Nombre completo
           <input name="fullName" type="text" required />
         </label>
-        <label>Correo electrónico
+        <label>Correo electrÃ³nico
           <input name="email" type="email" required />
         </label>
-        <label>Teléfono (opcional)
+        <label>TelÃ©fono (opcional)
           <input name="phone" type="tel" />
         </label>
-        <label>Dirección de entrega
+        <label>DirecciÃ³n de entrega
           <input name="addressLine1" type="text" required />
         </label>
         <div class="checkout-grid">
           <label>Ciudad
             <input name="city" type="text" value="Bogota" required />
           </label>
-          <label>Código postal (opcional)
+          <label>CÃ³digo postal (opcional)
             <input name="postalCode" type="text" />
           </label>
         </div>
